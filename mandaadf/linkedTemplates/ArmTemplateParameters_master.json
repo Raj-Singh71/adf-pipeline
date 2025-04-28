@@ -5,6 +5,21 @@
 		"factoryName": {
 			"value": "mandaadf"
 		},
+		"mandasqlDb_password": {
+			"value": ""
+		},
+		"BlobStorageProducts_connectionString": {
+			"value": ""
+		},
+		"mandasqlDb_properties_typeProperties_server": {
+			"value": "mandaserver.database.windows.net"
+		},
+		"mandasqlDb_properties_typeProperties_database": {
+			"value": "mandasql"
+		},
+		"mandasqlDb_properties_typeProperties_userName": {
+			"value": "manda"
+		},
 		"containerUri": {
 			"value": ""
 		},

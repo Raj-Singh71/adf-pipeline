@@ -668,7 +668,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "CustomerTables.csv",
+						"fileName": "CustomerTables.json",
 						"container": "products"
 					}
 				},

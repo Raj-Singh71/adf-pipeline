@@ -5,10 +5,10 @@
 		"factoryName": {
 			"value": "mandaadf"
 		},
-		"mandasqlDb_password": {
+		"BlobStorageProducts_connectionString": {
 			"value": ""
 		},
-		"BlobStorageProducts_connectionString": {
+		"mandasqlDb_password": {
 			"value": ""
 		},
 		"mandasqlDb_properties_typeProperties_server": {

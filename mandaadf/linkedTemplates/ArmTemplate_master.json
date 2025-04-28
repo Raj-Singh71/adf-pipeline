@@ -7,13 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "mandaadf"
 		},
-		"mandasqlDb_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'mandasqlDb'"
-		},
 		"BlobStorageProducts_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStorageProducts'"
+		},
+		"mandasqlDb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'mandasqlDb'"
 		},
 		"mandasqlDb_properties_typeProperties_server": {
 			"type": "string",
@@ -54,11 +54,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"mandasqlDb_password": {
-						"value": "[parameters('mandasqlDb_password')]"
-					},
 					"BlobStorageProducts_connectionString": {
 						"value": "[parameters('BlobStorageProducts_connectionString')]"
+					},
+					"mandasqlDb_password": {
+						"value": "[parameters('mandasqlDb_password')]"
 					},
 					"mandasqlDb_properties_typeProperties_server": {
 						"value": "[parameters('mandasqlDb_properties_typeProperties_server')]"

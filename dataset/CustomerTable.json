@@ -1,0 +1,19 @@
+{
+	"name": "CustomerTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobStorageProducts",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "CustomerTables.csv",
+				"container": "products"
+			}
+		},
+		"schema": {}
+	}
+}

@@ -1433,7 +1433,7 @@
 						"TripDataCSV, TripFaresTable join(TripDataCSV@medallion == TripFaresTable@medallion",
 						"     && TripDataCSV@hack_license == TripFaresTable@hack_license",
 						"     && TripDataCSV@vendor_id == TripFaresTable@vendor_id",
-						"     && TripDataCSV@pickup_datetime == toTimestamp(TripFaresTable@pickup_datetime),",
+						"     && toString(TripDataCSV@pickup_datetime) == TripFaresTable@pickup_datetime,",
 						"     joinType:'inner',",
 						"     matchType:'exact',",
 						"     ignoreSpaces: false,",

@@ -8,32 +8,26 @@
 		"ADLSGen2_accountKey": {
 			"value": ""
 		},
-		"BlobStorageProducts_connectionString": {
+		"ADLSTripData_accountKey": {
 			"value": ""
 		},
-		"mandasqlDb_password": {
+		"BlobStorageProducts_connectionString": {
 			"value": ""
 		},
 		"TaxiTripDB_password": {
 			"value": ""
 		},
-		"ADLSTripData_accountKey": {
+		"TripAggregateBlob_connectionString": {
 			"value": ""
 		},
-		"TripAggregateBlob_connectionString": {
+		"mandasqlDb_password": {
 			"value": ""
 		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"value": "https://mandadatalake.dfs.core.windows.net/"
 		},
-		"mandasqlDb_properties_typeProperties_server": {
-			"value": "mandaserver.database.windows.net"
-		},
-		"mandasqlDb_properties_typeProperties_database": {
-			"value": "mandasql"
-		},
-		"mandasqlDb_properties_typeProperties_userName": {
-			"value": "manda"
+		"ADLSTripData_properties_typeProperties_url": {
+			"value": "https://mandadatalake.dfs.core.windows.net/"
 		},
 		"TaxiTripDB_properties_typeProperties_server": {
 			"value": "mandaserver.database.windows.net"
@@ -44,8 +38,14 @@
 		"TaxiTripDB_properties_typeProperties_userName": {
 			"value": "manda"
 		},
-		"ADLSTripData_properties_typeProperties_url": {
-			"value": "https://mandadatalake.dfs.core.windows.net/"
+		"mandasqlDb_properties_typeProperties_server": {
+			"value": "mandaserver.database.windows.net"
+		},
+		"mandasqlDb_properties_typeProperties_database": {
+			"value": "mandasql"
+		},
+		"mandasqlDb_properties_typeProperties_userName": {
+			"value": "manda"
 		},
 		"containerUri": {
 			"value": ""

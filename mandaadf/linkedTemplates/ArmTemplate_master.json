@@ -31,6 +31,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'mandasqlDb'"
 		},
+		"ADLSGen_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLSGen'"
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
@@ -62,6 +66,10 @@
 		"mandasqlDb_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "manda"
+		},
+		"ADLSGen_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -108,6 +116,9 @@
 					"mandasqlDb_password": {
 						"value": "[parameters('mandasqlDb_password')]"
 					},
+					"ADLSGen_accountKey": {
+						"value": "[parameters('ADLSGen_accountKey')]"
+					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"
 					},
@@ -131,6 +142,9 @@
 					},
 					"mandasqlDb_properties_typeProperties_userName": {
 						"value": "[parameters('mandasqlDb_properties_typeProperties_userName')]"
+					},
+					"ADLSGen_properties_typeProperties_url": {
+						"value": "[parameters('ADLSGen_properties_typeProperties_url')]"
 					}
 				}
 			},

@@ -20,6 +20,9 @@
 		"ADLSTripData_accountKey": {
 			"value": ""
 		},
+		"TripAggregateBlob_connectionString": {
+			"value": ""
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"value": "https://mandadatalake.dfs.core.windows.net/"
 		},

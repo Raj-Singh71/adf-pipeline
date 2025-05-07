@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "mandaadf"
 		},
+		"ADLSGen_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLSGen'"
+		},
 		"ADLSGen2_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ADLSGen2'"
@@ -18,6 +22,14 @@
 		"BlobStorageProducts_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStorageProducts'"
+		},
+		"FlipkartSinkLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'FlipkartSinkLS'"
+		},
+		"FlipkartSourceLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'FlipkartSourceLS'"
 		},
 		"TaxiTripDB_password": {
 			"type": "secureString",
@@ -31,9 +43,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'mandasqlDb'"
 		},
-		"ADLSGen_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ADLSGen'"
+		"ADLSGen_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
 		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
@@ -67,10 +79,6 @@
 			"type": "string",
 			"defaultValue": "manda"
 		},
-		"ADLSGen_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -98,6 +106,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ADLSGen_accountKey": {
+						"value": "[parameters('ADLSGen_accountKey')]"
+					},
 					"ADLSGen2_accountKey": {
 						"value": "[parameters('ADLSGen2_accountKey')]"
 					},
@@ -106,6 +117,12 @@
 					},
 					"BlobStorageProducts_connectionString": {
 						"value": "[parameters('BlobStorageProducts_connectionString')]"
+					},
+					"FlipkartSinkLS_connectionString": {
+						"value": "[parameters('FlipkartSinkLS_connectionString')]"
+					},
+					"FlipkartSourceLS_connectionString": {
+						"value": "[parameters('FlipkartSourceLS_connectionString')]"
 					},
 					"TaxiTripDB_password": {
 						"value": "[parameters('TaxiTripDB_password')]"
@@ -116,8 +133,8 @@
 					"mandasqlDb_password": {
 						"value": "[parameters('mandasqlDb_password')]"
 					},
-					"ADLSGen_accountKey": {
-						"value": "[parameters('ADLSGen_accountKey')]"
+					"ADLSGen_properties_typeProperties_url": {
+						"value": "[parameters('ADLSGen_properties_typeProperties_url')]"
 					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"
@@ -142,9 +159,6 @@
 					},
 					"mandasqlDb_properties_typeProperties_userName": {
 						"value": "[parameters('mandasqlDb_properties_typeProperties_userName')]"
-					},
-					"ADLSGen_properties_typeProperties_url": {
-						"value": "[parameters('ADLSGen_properties_typeProperties_url')]"
 					}
 				}
 			},

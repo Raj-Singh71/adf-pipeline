@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "mandaadf"
 		},
+		"ADLSGen_accountKey": {
+			"value": ""
+		},
 		"ADLSGen2_accountKey": {
 			"value": ""
 		},
@@ -12,6 +15,12 @@
 			"value": ""
 		},
 		"BlobStorageProducts_connectionString": {
+			"value": ""
+		},
+		"FlipkartSinkLS_connectionString": {
+			"value": ""
+		},
+		"FlipkartSourceLS_connectionString": {
 			"value": ""
 		},
 		"TaxiTripDB_password": {
@@ -23,8 +32,8 @@
 		"mandasqlDb_password": {
 			"value": ""
 		},
-		"ADLSGen_accountKey": {
-			"value": ""
+		"ADLSGen_properties_typeProperties_url": {
+			"value": "https://mandadatalake.dfs.core.windows.net/"
 		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"value": "https://mandadatalake.dfs.core.windows.net/"
@@ -49,9 +58,6 @@
 		},
 		"mandasqlDb_properties_typeProperties_userName": {
 			"value": "manda"
-		},
-		"ADLSGen_properties_typeProperties_url": {
-			"value": "https://mandadatalake.dfs.core.windows.net/"
 		}
 	}
 }

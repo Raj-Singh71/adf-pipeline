@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "ParquetFlipkart",
+						"type": "DatasetReference"
+					},
 					"name": "sinkflip"
 				}
 			],
@@ -48,12 +52,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> flipkartcsv",
-				"flipkartcsv filter(or(toInteger(norating1)< 10, toInteger(noreviews1) < 10) \r",
-				") ~> filterflipkart",
+				"flipkartcsv filter(or(toInteger(norating1)< 10, toInteger(noreviews1) < 10)) ~> filterflipkart",
 				"filterflipkart derive(positive_review_ratio = toInteger(star_5f) / toInteger(norating1)) ~> derivedColumn1",
-				"derivedColumn1 derive(total_starts = toInteger(star_1f) + toInteger(star_2f) + toInteger(star_3f) + toInteger(star_4f) + toInteger(star_5f) ) ~> derivedColumn2",
+				"derivedColumn1 derive(total_starts = toInteger(star_1f) + toInteger(star_2f) + toInteger(star_3f) + toInteger(star_4f) + toInteger(star_5f)) ~> derivedColumn2",
 				"derivedColumn2 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     format: 'parquet',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sinkflip"
 			]

@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'mandasqlDb'"
 		},
+		"Lookup LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Lookup LS'"
+		},
 		"ADLSGen_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
@@ -132,6 +136,9 @@
 					},
 					"mandasqlDb_password": {
 						"value": "[parameters('mandasqlDb_password')]"
+					},
+					"Lookup LS_connectionString": {
+						"value": "[parameters('Lookup LS_connectionString')]"
 					},
 					"ADLSGen_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen_properties_typeProperties_url')]"

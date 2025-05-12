@@ -32,6 +32,9 @@
 		"mandasqlDb_password": {
 			"value": ""
 		},
+		"Lookup LS_connectionString": {
+			"value": ""
+		},
 		"ADLSGen_properties_typeProperties_url": {
 			"value": "https://mandadatalake.dfs.core.windows.net/"
 		},

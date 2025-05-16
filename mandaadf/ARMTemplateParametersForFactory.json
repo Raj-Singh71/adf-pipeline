@@ -14,6 +14,9 @@
 		"ADLSTripData_accountKey": {
 			"value": ""
 		},
+		"AzureDatabricks_accessToken": {
+			"value": ""
+		},
 		"BlobStorageProducts_connectionString": {
 			"value": ""
 		},
@@ -21,6 +24,9 @@
 			"value": ""
 		},
 		"FlipkartSourceLS_connectionString": {
+			"value": ""
+		},
+		"Lookup LS_connectionString": {
 			"value": ""
 		},
 		"TaxiTripDB_password": {
@@ -32,9 +38,6 @@
 		"mandasqlDb_password": {
 			"value": ""
 		},
-		"Lookup LS_connectionString": {
-			"value": ""
-		},
 		"ADLSGen_properties_typeProperties_url": {
 			"value": "https://mandadatalake.dfs.core.windows.net/"
 		},
@@ -43,6 +46,9 @@
 		},
 		"ADLSTripData_properties_typeProperties_url": {
 			"value": "https://mandadatalake.dfs.core.windows.net/"
+		},
+		"AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"value": "0516-034007-c7118rom"
 		},
 		"TaxiTripDB_properties_typeProperties_server": {
 			"value": "mandaserver.database.windows.net"

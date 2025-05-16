@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ADLSTripData'"
 		},
+		"AzureDatabricks_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks'"
+		},
 		"BlobStorageProducts_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStorageProducts'"
@@ -30,6 +34,10 @@
 		"FlipkartSourceLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'FlipkartSourceLS'"
+		},
+		"Lookup LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Lookup LS'"
 		},
 		"TaxiTripDB_password": {
 			"type": "secureString",
@@ -43,10 +51,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'mandasqlDb'"
 		},
-		"Lookup LS_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Lookup LS'"
-		},
 		"ADLSGen_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
@@ -58,6 +62,10 @@
 		"ADLSTripData_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
+		},
+		"AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0516-034007-c7118rom"
 		},
 		"TaxiTripDB_properties_typeProperties_server": {
 			"type": "string",
@@ -119,6 +127,9 @@
 					"ADLSTripData_accountKey": {
 						"value": "[parameters('ADLSTripData_accountKey')]"
 					},
+					"AzureDatabricks_accessToken": {
+						"value": "[parameters('AzureDatabricks_accessToken')]"
+					},
 					"BlobStorageProducts_connectionString": {
 						"value": "[parameters('BlobStorageProducts_connectionString')]"
 					},
@@ -127,6 +138,9 @@
 					},
 					"FlipkartSourceLS_connectionString": {
 						"value": "[parameters('FlipkartSourceLS_connectionString')]"
+					},
+					"Lookup LS_connectionString": {
+						"value": "[parameters('Lookup LS_connectionString')]"
 					},
 					"TaxiTripDB_password": {
 						"value": "[parameters('TaxiTripDB_password')]"
@@ -137,9 +151,6 @@
 					"mandasqlDb_password": {
 						"value": "[parameters('mandasqlDb_password')]"
 					},
-					"Lookup LS_connectionString": {
-						"value": "[parameters('Lookup LS_connectionString')]"
-					},
 					"ADLSGen_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen_properties_typeProperties_url')]"
 					},
@@ -148,6 +159,9 @@
 					},
 					"ADLSTripData_properties_typeProperties_url": {
 						"value": "[parameters('ADLSTripData_properties_typeProperties_url')]"
+					},
+					"AzureDatabricks_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks_properties_typeProperties_existingClusterId')]"
 					},
 					"TaxiTripDB_properties_typeProperties_server": {
 						"value": "[parameters('TaxiTripDB_properties_typeProperties_server')]"
@@ -189,6 +203,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'mandaadf_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "mandaadf_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mandaadf_ArmTemplate_1')]"
 			]
 		}
 	]

@@ -51,6 +51,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'mandasqlDb'"
 		},
+		"adlslinkedservice_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adlslinkedservice'"
+		},
+		"LinkedServiceAssessment_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LinkedServiceAssessment'"
+		},
 		"ADLSGen_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
@@ -90,6 +98,14 @@
 		"mandasqlDb_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "manda"
+		},
+		"adlslinkedservice_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mandastorageacc855.dfs.core.windows.net/"
+		},
+		"LinkedServiceAssessment_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mandastorageacc855.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -301,6 +317,40 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('mandasqlDb_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/adlslinkedservice')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('adlslinkedservice_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('adlslinkedservice_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LinkedServiceAssessment')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LinkedServiceAssessment_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LinkedServiceAssessment_accountKey')]"
 					}
 				}
 			},
@@ -617,58 +667,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ADLSGen')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MoviesSink')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ADLSGen",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": "output",
-						"fileSystem": "movies"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ADLSGen')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ParquetFlipkart')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "FlipkartSinkLS",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"container": "flipkart"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/FlipkartSinkLS')]"
 			]
 		}
 	]

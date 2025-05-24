@@ -38,6 +38,12 @@
 		"mandasqlDb_password": {
 			"value": ""
 		},
+		"adlslinkedservice_accountKey": {
+			"value": ""
+		},
+		"LinkedServiceAssessment_accountKey": {
+			"value": ""
+		},
 		"ADLSGen_properties_typeProperties_url": {
 			"value": "https://mandadatalake.dfs.core.windows.net/"
 		},
@@ -67,6 +73,12 @@
 		},
 		"mandasqlDb_properties_typeProperties_userName": {
 			"value": "manda"
+		},
+		"adlslinkedservice_properties_typeProperties_url": {
+			"value": "https://mandastorageacc855.dfs.core.windows.net/"
+		},
+		"LinkedServiceAssessment_properties_typeProperties_url": {
+			"value": "https://mandastorageacc855.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""

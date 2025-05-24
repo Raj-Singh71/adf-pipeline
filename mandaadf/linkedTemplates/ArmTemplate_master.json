@@ -51,6 +51,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'mandasqlDb'"
 		},
+		"adlslinkedservice_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adlslinkedservice'"
+		},
+		"LinkedServiceAssessment_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LinkedServiceAssessment'"
+		},
 		"ADLSGen_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mandadatalake.dfs.core.windows.net/"
@@ -90,6 +98,14 @@
 		"mandasqlDb_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "manda"
+		},
+		"adlslinkedservice_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mandastorageacc855.dfs.core.windows.net/"
+		},
+		"LinkedServiceAssessment_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mandastorageacc855.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -151,6 +167,12 @@
 					"mandasqlDb_password": {
 						"value": "[parameters('mandasqlDb_password')]"
 					},
+					"adlslinkedservice_accountKey": {
+						"value": "[parameters('adlslinkedservice_accountKey')]"
+					},
+					"LinkedServiceAssessment_accountKey": {
+						"value": "[parameters('LinkedServiceAssessment_accountKey')]"
+					},
 					"ADLSGen_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen_properties_typeProperties_url')]"
 					},
@@ -180,6 +202,12 @@
 					},
 					"mandasqlDb_properties_typeProperties_userName": {
 						"value": "[parameters('mandasqlDb_properties_typeProperties_userName')]"
+					},
+					"adlslinkedservice_properties_typeProperties_url": {
+						"value": "[parameters('adlslinkedservice_properties_typeProperties_url')]"
+					},
+					"LinkedServiceAssessment_properties_typeProperties_url": {
+						"value": "[parameters('LinkedServiceAssessment_properties_typeProperties_url')]"
 					}
 				}
 			},
